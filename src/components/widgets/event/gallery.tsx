@@ -116,10 +116,12 @@ function Gallery() {
                 </Grid>
               </Grid>
               <Slide
-                slidesToScroll={3}
-                slidesToShow={3}
+               
                 indicators={false}
                 responsive={responsiveSettings}
+
+              
+                
               >
                 {data.images.map((slideImage, index) => (
                   <Grid display={"flex"} justifyContent={"center"} key={index}>
