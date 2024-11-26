@@ -159,7 +159,7 @@ function Register() {
       setOpen(true);
       return false;
     }
-    if (code && code.trim() == "" && memberType.code && hasCode) {
+    if (!code && memberType.code) {
       setError("Your Registration code is required");
       setOpen(true);
       return false;
@@ -265,8 +265,11 @@ function Register() {
           }
         } else {
           // handle null response 
-          console.log(res);
-          console.log('No data coming from server');
+          Swal.fire({
+            title: "Error!",
+            text: "Apologies, there seems to be an issue with your details. Please check and try again. Thank you.",
+            icon: "error",
+          });
         }
         setLoading(false);
       } catch (e) {

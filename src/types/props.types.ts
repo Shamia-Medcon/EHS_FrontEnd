@@ -72,6 +72,12 @@ export type AgendaType = {
   details: any[];
 };
 
+export type AgendaConferenceType = {
+  id: number;
+  agenda_date: string;
+  details: any[];
+};
+
 export type AgendaDetailsType = {
   id: number;
   agenda_time: string;

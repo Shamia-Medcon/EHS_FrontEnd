@@ -117,7 +117,7 @@ export default function Agenda() {
 
   const [loading, setLoading] = useState(false);
   const [loadBooking, setLoadBooking] = useState(false);
-  const [agendas, setAgendas] = useState<AgendaType[]>([]);
+  const [agendas, setAgendas] = useState<AgendaDetailsType[]>([]);
   const [selectedWorkshop1, setSelectedWorkshop1] = useState(null);
   const [selectedWorkshop2, setSelectedWorkshop2] = useState(null);
   const [bookings, setBookings] = useState<any>(null);
@@ -189,7 +189,7 @@ export default function Agenda() {
           title: "Congratulations!",
           text: "You have successfully booked your pre-conference workshops. Thank you!",
           icon: "success",
-        }).then((result) => {
+        }).then((result: any) => {
           router.replace("/");
         });
         // Reset selections after successful booking
@@ -252,7 +252,6 @@ export default function Agenda() {
         option_1: selectedWorkshop1,
         option_2: selectedWorkshop2,
       };
-
 
       console.log(data);
 
@@ -434,113 +433,13 @@ export default function Agenda() {
             </Grid>
             <Grid item xs={12} padding={2}>
               <Accordion defaultExpanded>
-                <AccordionSummary
+              <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel1-content"
                   id="panel1-header"
                 >
                   <Typography color={themeColor.blue.dark} fontWeight={"bold"}>
-                    Workshop 1: Diabetes Management with Cutting-Edge Technology
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography
-                    color={themeColor.primary.dark}
-                    fontSize={17}
-                    fontWeight={"bold"}
-                  >
-                    Aim:
-                  </Typography>
-                  <Typography color={themeColor.blue.dark} fontSize={14}>
-                    To equip healthcare professionals with advanced expertise in
-                    diabetes technology
-                  </Typography>
-
-                  <Grid item sx={{ paddingTop: 2, paddingBottom: 2 }}>
-                    <Typography
-                      color={themeColor.primary.dark}
-                      fontSize={17}
-                      fontWeight={"bold"}
-                    >
-                      Workshop objectives:
-                    </Typography>
-                    <List sx={{ listStyleType: "disc", px: 2 }}>
-                      {w1Objectives.map((item) => (
-                        <ListItem key={item} sx={{ display: "list-item" }}>
-                          <ListItemText
-                            primary={item}
-                            disableTypography
-                            sx={{
-                              color: themeColor.blue.dark,
-                              fontSize: { xs: 12, sm: 14 },
-                              lineHeight: {xs: 1.5, sm: 0},
-                            }}
-                          />
-                        </ListItem>
-                      ))}
-                    </List>
-                  </Grid>
-                  <Grid container spacing={2}>
-                    <Grid xs={6} padding={2}>
-                      <Typography
-                        color={themeColor.primary.dark}
-                        fontSize={17}
-                        fontWeight={"bold"}
-                      >
-                        Target audience:
-                      </Typography>
-                      <List sx={{ listStyleType: "disc", px: 2 }}>
-                        {w1Target_audience.map((item) => (
-                          <ListItem key={item} sx={{ display: "list-item" }}>
-                            <ListItemText
-                              primary={item}
-                              disableTypography
-                              sx={{
-                                color: themeColor.blue.dark,
-                                fontSize: { xs: 12, sm: 14 },
-                                lineHeight: {xs: 1.5, sm: 0},
-                              }}
-                            />
-                          </ListItem>
-                        ))}
-                      </List>
-                    </Grid>
-
-                    <Grid xs={6} padding={2}>
-                      <Typography
-                        color={themeColor.primary.dark}
-                        fontSize={17}
-                        fontWeight={"bold"}
-                      >
-                        No of Participants:
-                      </Typography>
-                      <List sx={{ listStyleType: "disc", px: 2 }}>
-                        {w1Num_participants.map((item) => (
-                          <ListItem key={item} sx={{ display: "list-item" }}>
-                            <ListItemText
-                              primary={item}
-                              disableTypography
-                              sx={{
-                                color: themeColor.blue.dark,
-                                fontSize: { xs: 12, sm: 14 },
-                                lineHeight: {xs: 1.5, sm: 0},
-                              }}
-                            />
-                          </ListItem>
-                        ))}
-                      </List>
-                    </Grid>
-                  </Grid>
-                </AccordionDetails>
-              </Accordion>
-              <Accordion>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel1-content"
-                  id="panel1-header"
-                >
-                  <Typography color={themeColor.blue.dark} fontWeight={"bold"}>
-                    Workshop 2: Insulin Therapy - Tactics and Guide to Target
+                    Workshop 1: Insulin Therapy - Tactics and Guide to Target
                   </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
@@ -557,7 +456,13 @@ export default function Agenda() {
                     achieve their treatment targets
                   </Typography>
 
-                  <Grid item xs={12} sm={6} md={4} sx={{ paddingTop: 2, paddingBottom: 2 }}>
+                  <Grid
+                    item
+                    xs={12}
+                    sm={12}
+                    md={12}
+                    sx={{ paddingTop: 2, paddingBottom: 2 }}
+                  >
                     <Typography
                       color={themeColor.primary.dark}
                       fontSize={{ xs: 15, sm: 17 }}
@@ -574,7 +479,7 @@ export default function Agenda() {
                             sx={{
                               color: themeColor.blue.dark,
                               fontSize: { xs: 12, sm: 14 },
-                              lineHeight: {xs: 1.5, sm: 0},
+                              lineHeight: { xs: 1.5, sm: 1 },
                             }}
                           />
                         </ListItem>
@@ -599,7 +504,7 @@ export default function Agenda() {
                               sx={{
                                 color: themeColor.blue.dark,
                                 fontSize: { xs: 12, sm: 14 },
-                                lineHeight: {xs: 1.5, sm: 0},
+                                lineHeight: { xs: 1.5, sm: 0 },
                               }}
                             />
                           </ListItem>
@@ -624,7 +529,7 @@ export default function Agenda() {
                               sx={{
                                 color: themeColor.blue.dark,
                                 fontSize: { xs: 12, sm: 14 },
-                                lineHeight: {xs: 1.5, sm: 0},
+                                lineHeight: { xs: 1.5, sm: 0 },
                               }}
                             />
                           </ListItem>
@@ -641,7 +546,7 @@ export default function Agenda() {
                   id="panel1-header"
                 >
                   <Typography color={themeColor.blue.dark} fontWeight={"bold"}>
-                    Workshop 3: Interdisciplinary Perspectives on
+                    Workshop 2: Interdisciplinary Perspectives on
                     Cardio-Metabolic Health
                   </Typography>
                 </AccordionSummary>
@@ -676,7 +581,7 @@ export default function Agenda() {
                             sx={{
                               color: themeColor.blue.dark,
                               fontSize: { xs: 12, sm: 14 },
-                              lineHeight: {xs: 1.5, sm: 0},
+                              lineHeight: { xs: 1.5, sm: 0 },
                             }}
                           />
                         </ListItem>
@@ -701,7 +606,7 @@ export default function Agenda() {
                               sx={{
                                 color: themeColor.blue.dark,
                                 fontSize: { xs: 12, sm: 14 },
-                                lineHeight: {xs: 1.5, sm: 0},
+                                lineHeight: { xs: 1.5, sm: 0 },
                               }}
                             />
                           </ListItem>
@@ -726,7 +631,7 @@ export default function Agenda() {
                               sx={{
                                 color: themeColor.blue.dark,
                                 fontSize: { xs: 12, sm: 14 },
-                                lineHeight: {xs: 1.5, sm: 0},
+                                lineHeight: { xs: 1.5, sm: 0 },
                               }}
                             />
                           </ListItem>
@@ -736,6 +641,108 @@ export default function Agenda() {
                   </Grid>
                 </AccordionDetails>
               </Accordion>
+              <Accordion>
+              <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1-content"
+                  id="panel1-header"
+                >
+                  <Typography color={themeColor.blue.dark} fontWeight={"bold"}>
+                    Workshop 3: Diabetes Management with Cutting-Edge Technology
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography
+                    color={themeColor.primary.dark}
+                    fontSize={17}
+                    fontWeight={"bold"}
+                  >
+                    Aim:
+                  </Typography>
+                  <Typography color={themeColor.blue.dark} fontSize={14}>
+                    To equip healthcare professionals with advanced expertise in
+                    diabetes technology
+                  </Typography>
+
+                  <Grid item sx={{ paddingTop: 2, paddingBottom: 2 }}>
+                    <Typography
+                      color={themeColor.primary.dark}
+                      fontSize={17}
+                      fontWeight={"bold"}
+                    >
+                      Workshop objectives:
+                    </Typography>
+                    <List sx={{ listStyleType: "disc", px: 2 }}>
+                      {w1Objectives.map((item) => (
+                        <ListItem key={item} sx={{ display: "list-item" }}>
+                          <ListItemText
+                            primary={item}
+                            disableTypography
+                            sx={{
+                              color: themeColor.blue.dark,
+                              fontSize: { xs: 12, sm: 14 },
+                              lineHeight: { xs: 1.5, sm: 0 },
+                            }}
+                          />
+                        </ListItem>
+                      ))}
+                    </List>
+                  </Grid>
+                  <Grid container spacing={2}>
+                    <Grid xs={6} padding={2}>
+                      <Typography
+                        color={themeColor.primary.dark}
+                        fontSize={17}
+                        fontWeight={"bold"}
+                      >
+                        Target audience:
+                      </Typography>
+                      <List sx={{ listStyleType: "disc", px: 2 }}>
+                        {w1Target_audience.map((item) => (
+                          <ListItem key={item} sx={{ display: "list-item" }}>
+                            <ListItemText
+                              primary={item}
+                              disableTypography
+                              sx={{
+                                color: themeColor.blue.dark,
+                                fontSize: { xs: 12, sm: 14 },
+                                lineHeight: { xs: 1.5, sm: 0 },
+                              }}
+                            />
+                          </ListItem>
+                        ))}
+                      </List>
+                    </Grid>
+
+                    <Grid xs={6} padding={2}>
+                      <Typography
+                        color={themeColor.primary.dark}
+                        fontSize={17}
+                        fontWeight={"bold"}
+                      >
+                        No of Participants:
+                      </Typography>
+                      <List sx={{ listStyleType: "disc", px: 2 }}>
+                        {w1Num_participants.map((item) => (
+                          <ListItem key={item} sx={{ display: "list-item" }}>
+                            <ListItemText
+                              primary={item}
+                              disableTypography
+                              sx={{
+                                color: themeColor.blue.dark,
+                                fontSize: { xs: 12, sm: 14 },
+                                lineHeight: { xs: 1.5, sm: 0 },
+                              }}
+                            />
+                          </ListItem>
+                        ))}
+                      </List>
+                    </Grid>
+                  </Grid>
+                </AccordionDetails>
+               
+              </Accordion>
+          
               <Accordion>
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
@@ -777,7 +784,7 @@ export default function Agenda() {
                             sx={{
                               color: themeColor.blue.dark,
                               fontSize: { xs: 12, sm: 14 },
-                              lineHeight: {xs: 1.5, sm: 0},
+                              lineHeight: { xs: 1.5, sm: 0 },
                             }}
                           />
                         </ListItem>
@@ -802,7 +809,7 @@ export default function Agenda() {
                               sx={{
                                 color: themeColor.blue.dark,
                                 fontSize: { xs: 12, sm: 14 },
-                                lineHeight: {xs: 1.5, sm: 0},
+                                lineHeight: { xs: 1.5, sm: 0 },
                               }}
                             />
                           </ListItem>
@@ -827,7 +834,7 @@ export default function Agenda() {
                               sx={{
                                 color: themeColor.blue.dark,
                                 fontSize: { xs: 12, sm: 14 },
-                                lineHeight: {xs: 1.5, sm: 0},
+                                lineHeight: { xs: 1.5, sm: 0 },
                               }}
                             />
                           </ListItem>
@@ -878,11 +885,7 @@ export default function Agenda() {
                   }}
                 >
                   <Grid container spacing={4} justifyContent="center">
-                    <Grid
-                      item
-                      xs={4}
-                      sx={{ display: "flex", }}
-                    >
+                    <Grid item xs={4} sx={{ display: "flex" }}>
                       <Typography
                         sx={{
                           color: themeColor.blue.dark,
@@ -903,16 +906,20 @@ export default function Agenda() {
                       <RadioGroup
                         value={selectedWorkshop1}
                         onChange={handleWorkshop1Selection}
-                        sx={{ flexDirection: "row",justifyContent: "space-between"	,flex: 1 }}
+                        sx={{
+                          flexDirection: "row",
+                          justifyContent: "space-between",
+                          flex: 1,
+                        }}
                       >
                         <FormControlLabel
                           value="Workshop 1"
                           name="option_1"
-                          control={<Radio  />}
+                          control={<Radio />}
                           label="Workshop 1"
                           sx={{ color: themeColor.blue.dark }}
                         />
-                    
+
                         <FormControlLabel
                           value="Workshop 2"
                           name="option_1"
@@ -939,11 +946,7 @@ export default function Agenda() {
                   }}
                 >
                   <Grid container spacing={4} justifyContent="center">
-                    <Grid
-                      item
-                      xs={4}
-                      sx={{ display: "flex",  }}
-                    >
+                    <Grid item xs={4} sx={{ display: "flex" }}>
                       <Typography
                         sx={{
                           color: themeColor.blue.dark,
@@ -964,7 +967,11 @@ export default function Agenda() {
                       <RadioGroup
                         value={selectedWorkshop2}
                         onChange={handleWorkshop2Selection}
-                        sx={{ flexDirection: "row",justifyContent: "space-between"	,flex: 1 }}
+                        sx={{
+                          flexDirection: "row",
+                          justifyContent: "space-between",
+                          flex: 1,
+                        }}
                       >
                         <FormControlLabel
                           value="Workshop 3"

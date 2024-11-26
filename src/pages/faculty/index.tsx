@@ -4,7 +4,7 @@ import Layout from "@/components/design/layout";
 import EventDetails from "@/components/widgets/event/details";
 import { get } from "@/handler/api.handler";
 import { FacultyType } from "@/types/props.types";
-import { Divider, Grid, Typography } from "@mui/material";
+import { Box, Divider, Grid, Typography } from "@mui/material";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { ClipLoader } from "react-spinners";
@@ -58,6 +58,7 @@ export default function Faculty() {
               return (
                 <Grid p={2} key={key} item md={6} xs={12}>
                   <Grid display={"flex"} alignItems={"center"} gap={2}>
+                    <Box component="img" width={120} height={120} src={item.profile} alt="Profile"/>
                     <Divider
                       sx={{
                         my: 1,

@@ -63,7 +63,7 @@ function ResponsiveAppBar({ logo }: PropsType) {
               height={100}
               sx={{ objectFit: "contain" }}
               alt="EHS"
-              src={"/static/images/ehs.svg"}
+              src={"/static/images/ehs-new.svg"}
             />
           </Box>
 
@@ -93,7 +93,7 @@ function ResponsiveAppBar({ logo }: PropsType) {
               height={60}
               sx={{ objectFit: "contain" }}
               alt="EHS"
-              src={"/static/images/ehs.svg"}
+              src={"/static/images/ehs-new.svg"}
             />
           </Box>
         </Toolbar>

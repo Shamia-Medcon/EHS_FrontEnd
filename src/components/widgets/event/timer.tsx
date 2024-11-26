@@ -137,9 +137,7 @@ const Countdown = ({ target }: PropsType) => {
         <Grid item md={3} xs={3}>
           {renderItem(timeLeft.minutes, "Minutes")}
         </Grid>
-        {/* <Grid item md={3} xs={3}>
-          {renderItem(timeLeft.seconds, "Seconds")}
-        </Grid> */}
+      
       </Grid>
     </Grid>
   );

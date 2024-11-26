@@ -19,4 +19,8 @@ export const routeConfig = {
   agenda: {
     index: "agenda",
   },
+  pre_confrence: {
+    workshops: "preconference/workshops",
+    preconfindex: "agenda/pre_confrence",
+  },
 };

@@ -23,7 +23,7 @@ function CME() {
         <Grid py={3} container maxWidth={"lg"}>
           <Grid mb={4} item xs={12} display={"flex"} justifyContent={"center"}>
             <Typography fontWeight={"bold"} variant="h6">
-              CME Accreditation In Progress
+              CME Accredited
             </Typography>
           </Grid>
           <Grid item xs={12} md={6} display={"flex"} gap={4}>

@@ -1,7 +1,7 @@
 import React, { MouseEvent, useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
@@ -13,6 +13,7 @@ import MenuItem from "@mui/material/MenuItem";
 import { useRouter } from "next/router";
 import themeColor from "@/components/constant/color";
 import { useAuth } from "@/hooks/useAuth";
+import { Grid } from "@mui/material";
 
 const pages = [
   { title: "Home", action: "/" },
@@ -27,7 +28,12 @@ const pages = [
     action: "#",
     items: [
       { id: 1, title: "Conference Agenda", action: "/agenda/", items: [] },
-      { id: 2,title: "Pre-Conference Workshop", action: "/pre_confrence/", items: [] },
+      {
+        id: 2,
+        title: "Pre-Conference Workshop",
+        action: "/pre_confrence/",
+        items: [],
+      },
     ],
   },
   { title: "CME", action: "/cme/", items: [] },
@@ -91,12 +97,11 @@ function CustomMenu() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) =>
+              {pages.map((page, key) =>
                 page.items && page.items?.length > 0 ? (
-                  <>
+                  <Grid key={key}>
                     <Button key={page.title} onClick={handleClick}>
                       <Typography textAlign="center">{page.title}</Typography>
-                      
                     </Button>
                     <Menu
                       id="basic-menu"
@@ -122,7 +127,7 @@ function CustomMenu() {
                         );
                       })}
                     </Menu>
-                  </>
+                  </Grid>
                 ) : (
                   <MenuItem
                     key={page.title}
