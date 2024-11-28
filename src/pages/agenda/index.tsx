@@ -14,7 +14,8 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-
+import ComingSoon from '@/components/widgets/ComingSoon';
+import { isTesting } from "@/components/constant/isTesting";
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: themeColor.secondary.dark,
@@ -72,7 +73,7 @@ export default function Agenda() {
         justifyContent={"center"}
         alignItems={"center"}
       >
-        {loading ? (
+        {isTesting?(<ComingSoon/>): loading ? (
           <ClipLoader color={themeColor.primary.dark} size={40} />
         ) : (
           <Grid py={3} container maxWidth={"lg"}>

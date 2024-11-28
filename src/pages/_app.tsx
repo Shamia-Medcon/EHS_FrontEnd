@@ -27,6 +27,8 @@ declare module "@mui/material/Button" {
     dark: true;
     greyBlack: true;
     lightBlack: true;
+    yallowdark : true;
+    black : true;
   }
 }
 declare module "@mui/material/styles" {
@@ -42,6 +44,16 @@ declare module "@mui/material/styles" {
       light: string;
       dark: string;
     };
+    yallowdark :{
+      main : string;
+      light: string;
+      dark: string;
+    }
+    black :{
+      main : string;
+      light: string;
+      dark: string;
+    }
   }
   interface PaletteOptions {
     light?: PaletteOptions["primary"];
@@ -56,6 +68,16 @@ declare module "@mui/material/styles" {
       light: string;
       dark: string;
     };
+    yallowdark :{
+      main : string;
+      light: string;
+      dark: string;
+    }
+    black :{
+      main : string;
+      light: string;
+      dark: string;
+    }
   }
 }
 
@@ -126,7 +148,8 @@ const theme = createTheme({
     dark: themeColor.black,
     lightBlack: themeColor.lightBlack,
     greyBlack: themeColor.greyBlack,
-
+      black : themeColor.black,
+      yallowdark: themeColor.yallowdark,
     background: {
       default: "#fdfbf7",
     },

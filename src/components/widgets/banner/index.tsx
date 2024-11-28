@@ -45,7 +45,7 @@ function Banner({ children, banner }: PropType) {
             bottom={100}
             right={100}
           >
-            <Grid>
+            {/* <Grid>
               <Typography
                 color={themeColor.blue.dark}
                 fontWeight={"bold"}
@@ -69,7 +69,7 @@ function Banner({ children, banner }: PropType) {
                 orientation="horizontal"
                 flexItem
               />
-            </Grid>
+            </Grid> */}
           </Grid>
           <Grid
             sx={{ display: { xs: "flex", md: "none" } }}
@@ -83,7 +83,7 @@ function Banner({ children, banner }: PropType) {
             justifyContent={"flex-start"}
             alignItems={"center"}
           >
-            <Grid mt={3}>
+            {/* <Grid mt={3}>
               <Typography
                 color={themeColor.blue.dark}
                 fontWeight={"bold"}
@@ -108,7 +108,7 @@ function Banner({ children, banner }: PropType) {
                 orientation="horizontal"
                 flexItem
               />
-            </Grid>
+            </Grid> */}
           </Grid>
         </>
       ) : (

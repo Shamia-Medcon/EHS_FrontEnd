@@ -17,7 +17,7 @@ function ResponsiveAppBar({ logo }: PropsType) {
       position="static"
       sx={{ backgroundColor: "transparent" }}
     >
-      <Container maxWidth="xl">
+      <Container maxWidth={false}>
         <Toolbar disableGutters>
           <Box
             sx={{
@@ -27,19 +27,30 @@ function ResponsiveAppBar({ logo }: PropsType) {
               mr: 1,
             }}
           >
+            <Link href={"/"}>
+              <Button>
+                <Box
+                  component={"img"}
+                  width={300}
+                  height={100}
+                  sx={{ objectFit: "contain" }}
+                  alt="EHS"
+                  src={"/static/images/ehs-new.svg"}
+                />
+              </Button>
+            </Link>
+
             {logo ? (
-              <Link href={"/"}>
-                <Button>
-                  <Box
-                    component={"img"}
-                    width={220}
-                    height={80}
-                    sx={{ objectFit: "contain" }}
-                    alt="EHS"
-                    src={logo}
-                  />
-                </Button>
-              </Link>
+              <Box
+                component={"img"}
+                width={220}
+                height={80}
+                sx={{ objectFit: "contain" }}
+                alt="EHS"
+                marginTop={0}
+                marginRight={3}
+                src={logo}
+              />
             ) : (
               <Grid width={200} height={100} position={"relative"}>
                 <Box
@@ -57,14 +68,6 @@ function ResponsiveAppBar({ logo }: PropsType) {
                 <Skeleton variant="text" width={200} height={100}></Skeleton>
               </Grid>
             )}
-            <Box
-              component={"img"}
-              width={300}
-              height={100}
-              sx={{ objectFit: "contain" }}
-              alt="EHS"
-              src={"/static/images/ehs-new.svg"}
-            />
           </Box>
 
           <Box
@@ -80,20 +83,20 @@ function ResponsiveAppBar({ logo }: PropsType) {
               <Button>
                 <Box
                   component={"img"}
-                  width={100}
-                  height={40}
+                  width={160}
+                  height={60}
+                  sx={{ objectFit: "contain" }}
                   alt="EHS"
-                  src={logo}
+                  src={"/static/images/ehs-new.svg"}
                 />
               </Button>
             </Link>
             <Box
               component={"img"}
-              width={160}
-              height={60}
-              sx={{ objectFit: "contain" }}
+              width={100}
+              height={40}
               alt="EHS"
-              src={"/static/images/ehs-new.svg"}
+              src={logo}
             />
           </Box>
         </Toolbar>

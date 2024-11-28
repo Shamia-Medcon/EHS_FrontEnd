@@ -64,11 +64,12 @@ function CustomMenu() {
     <AppBar
       elevation={0}
       position="static"
+      // sx={{ backgroundColor: themeColor.primary.dark }}
       sx={{ backgroundColor: themeColor.primary.dark }}
     >
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+        <Toolbar disableGutters >
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" }, }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -81,6 +82,7 @@ function CustomMenu() {
             </IconButton>
             <Menu
               id="menu-appbar"
+              
               anchorEl={anchorElNav}
               anchorOrigin={{
                 vertical: "bottom",
@@ -100,10 +102,11 @@ function CustomMenu() {
               {pages.map((page, key) =>
                 page.items && page.items?.length > 0 ? (
                   <Grid key={key}>
-                    <Button key={page.title} onClick={handleClick}>
-                      <Typography textAlign="center">{page.title}</Typography>
+                    <Button key={page.title} onClick={handleClick} color={path == "/agenda/" || path =="/pre_confrence/" ? "yallowdark" : "black"} >
+                      <Typography textAlign="center" marginLeft={path == "/agenda/" || path =="/pre_confrence/" ?1:1}>{page.title}</Typography>
                     </Button>
                     <Menu
+                    
                       id="basic-menu"
                       anchorEl={anchorEl}
                       open={open}
@@ -115,6 +118,7 @@ function CustomMenu() {
                       {page.items.map((item) => {
                         return (
                           <MenuItem
+                          
                             key={item.id}
                             onClick={() => {
                               router.push({
@@ -123,6 +127,7 @@ function CustomMenu() {
                             }}
                           >
                             {item.title}
+                            
                           </MenuItem>
                         );
                       })}
@@ -136,20 +141,25 @@ function CustomMenu() {
                         pathname: page.action,
                       });
                     }}
+                    
                   >
-                    <Typography textAlign="center">{page.title}</Typography>
+                    <Typography textAlign="center"color = {path  == page.action? themeColor.yallowdark.main:themeColor.black.main}>{page.title}</Typography>
+                    
                   </MenuItem>
                 )
               )}
               <MenuItem
                 key={auth.user ? "Account" : "register"}
+                
                 onClick={() => {
                   router.push({
                     pathname: auth.user ? "/account" : "/register",
                   });
+                  
                 }}
+               
               >
-                <Typography textAlign="center">
+                <Typography textAlign="center"color = { path==   "/register/" || path == "/account/" ?themeColor.yallowdark.main:themeColor.black.main}>
                   {auth.user ? "Account" : "Register"}
                 </Typography>
               </MenuItem>
@@ -176,7 +186,7 @@ function CustomMenu() {
                       position: "relative",
                       fontWeight: "bold",
                     }}
-                    color={path == page.action ? "greyBlack" : "light"}
+                    color={path == "/agenda/" || path =="/pre_confrence/" ? "yallowdark" : "light"}
                   >
                     <Box
                       component={"span"}
@@ -188,10 +198,11 @@ function CustomMenu() {
                         transform: "translateX(-50%)",
                         borderBottom: path == page.action ? 3 : 0,
                         borderBottomColor:
-                          path == page.action ? "greyBlack" : "light",
+                          path == page.action ? "yallowdark" : "greyBlck",
                         maxWidth: 50,
                         width: "100%",
                       }}
+                      
                     />
                     {page.title}
                   </Button>
@@ -203,6 +214,7 @@ function CustomMenu() {
                     MenuListProps={{
                       "aria-labelledby": "basic-button",
                     }}
+                    
                   >
                     {page.items.map((item) => {
                       return (
@@ -227,12 +239,13 @@ function CustomMenu() {
                     router.push({
                       pathname: page.action,
                     });
+                   
                   }}
                   sx={{
                     position: "relative",
                     fontWeight: "bold",
                   }}
-                  color={path == page.action ? "greyBlack" : "light"}
+                  color={path == page.action ? "yallowdark" : "light"}
                 >
                   <Box
                     component={"span"}
@@ -244,7 +257,7 @@ function CustomMenu() {
                       transform: "translateX(-50%)",
                       borderBottom: path == page.action ? 3 : 0,
                       borderBottomColor:
-                        path == page.action ? "greyBlack" : "light",
+                        path == page.action ? "yallowdark" : "light",
                       maxWidth: 50,
                       width: "100%",
                     }}
@@ -259,12 +272,13 @@ function CustomMenu() {
                 router.push({
                   pathname: auth.user ? "/account" : "/register",
                 });
+                console.log("path", path);
               }}
               sx={{
                 position: "relative",
                 fontWeight: "bold",
               }}
-              color={path == "/register" ? "greyBlack" : "light"}
+              color={path == "/register/" || path =="/account/" ? "yallowdark" : "light"}
             >
               <Box
                 component={"span"}
@@ -275,9 +289,9 @@ function CustomMenu() {
                   left: "50%",
                   transform: "translateX(-50%)",
                   borderBottom:
-                    path == "/register" || path == "/account" ? 3 : 0,
+                    path == "/register/" || path == "/account/" ? 3 : 0,
                   borderBottomColor:
-                    "/register" || path == "/account" ? "greyBlack" : "light",
+                    path==   "/register/" || path == "/account/" ? "yallowdark" : "light",
                   maxWidth: 50,
                   width: "100%",
                 }}

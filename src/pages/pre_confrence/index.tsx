@@ -32,7 +32,8 @@ import { post } from "@/handler/api.handler";
 import { useAuth } from "@/hooks/useAuth";
 import Swal from "sweetalert2";
 import axios from "axios";
-
+import ComingSoon from '@/components/widgets/ComingSoon';
+import { isTesting } from "@/components/constant/isTesting";
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: themeColor.secondary.dark,
@@ -325,7 +326,7 @@ export default function Agenda() {
         justifyContent={"center"}
         alignItems={"center"}
       >
-        {loading ? (
+        {isTesting?(<ComingSoon/>): loading ? (
           <ClipLoader color={themeColor.primary.dark} size={40} />
         ) : (
           <Grid py={3} container maxWidth={"lg"}>

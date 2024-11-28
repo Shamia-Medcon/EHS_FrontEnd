@@ -5,7 +5,7 @@ import { SponsorType } from "@/types/props.types";
 import { Box, Grid, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { ClipLoader } from "react-spinners";
-
+import { isTesting } from "@/components/constant/isTesting";
 function Sponsors() {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState<SponsorType[]>([]);
@@ -58,7 +58,7 @@ function Sponsors() {
   // useEffect(() => {
   //   loadData();
   // }, []);
-  return (
+  return isTesting? <div></div> : (
     <Grid
       container
       sx={{

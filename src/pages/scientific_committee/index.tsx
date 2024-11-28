@@ -8,7 +8,8 @@ import { Box, Divider, Grid, Typography } from "@mui/material";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { ClipLoader } from "react-spinners";
-
+import ComingSoon from '@/components/widgets/ComingSoon';
+import { isTesting } from "@/components/constant/isTesting";
 export default function Faculty() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
@@ -32,7 +33,7 @@ export default function Faculty() {
     loadData();
   }, []);
 
-  return (
+  return  (
     <Layout banner>
       <Grid
         mt={5}
@@ -40,7 +41,7 @@ export default function Faculty() {
         justifyContent={"center"}
         alignItems={"center"}
       >
-        {loading ? (
+       {isTesting?(<ComingSoon />): loading ? (
           <ClipLoader color={themeColor.primary.dark} size={40} />
         ) : (
           <Grid mb={5} container maxWidth={"lg"}>

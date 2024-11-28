@@ -10,11 +10,12 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
-
+import ComingSoon from '@/components/widgets/ComingSoon';
+import { isTesting } from "@/components/constant/isTesting";
 function CME() {
   return (
     <Layout banner>
-      <Grid
+      {isTesting?<ComingSoon/>:(<Grid
         mt={5}
         display={"flex"}
         justifyContent={"center"}
@@ -96,7 +97,7 @@ function CME() {
             </List>
           </Grid>
         </Grid>
-      </Grid>
+      </Grid>)}
     </Layout>
   );
 }

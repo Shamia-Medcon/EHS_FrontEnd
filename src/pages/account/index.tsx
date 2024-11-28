@@ -3,7 +3,7 @@ import Layout from "@/components/design/layout";
 import { useAuth } from "@/hooks/useAuth";
 import { Button, Grid, Typography } from "@mui/material";
 import React from "react";
-
+import QRCodeGenerator from '@/components/widgets/QrCode';
 function Account() {
   const auth = useAuth();
 
@@ -115,18 +115,7 @@ function Account() {
                   {auth.user?.jobTitle ?? "-"}
                 </Typography>
               </Grid>
-            </Grid>
-          </Grid>
-          <Grid
-            item
-            md={6}
-            xs={12}
-            display={"flex"}
-            justifyContent={"center"}
-            flexDirection={"column"}
-            sx={{ alignItems: { md: "center", xs: "flex-start" } }}
-          >
-            <Grid>
+              <Grid>
               <Grid display={"flex"} alignItems={"center"}>
                 <Typography
                   fontWeight={"bold"}
@@ -193,8 +182,23 @@ function Account() {
                   {auth.user?.code ?? "-"}
                 </Typography>
               </Grid>
+              
               )}
+              
             </Grid>
+            </Grid>
+          </Grid>
+          
+          <Grid
+            item
+            md={6}
+            xs={12}
+            display={"flex"}
+            justifyContent={"center"}
+            flexDirection={"column"}
+            sx={{ alignItems: { md: "center", xs: "center" } }}
+          >
+            <QRCodeGenerator value={auth.user?.email ?? "-"} />
           </Grid>
         </Grid>
       </Grid>

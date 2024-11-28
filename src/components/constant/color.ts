@@ -1,8 +1,13 @@
+import { dark } from "@mui/material/styles/createPalette";
+
 export const themeColor = {
   primary: {
-    main: "#DC1E67",
-    light: "#DC1E67",
-    dark: "#DC1E67",
+    // main: "#DC1E67",
+    // light: "#DC1E67",
+    // dark: "#DC1E67",
+    main: "#052184",
+    light: '#052184',
+    dark:"#052184"
   },
   secondary: {
     main: "#198476",
@@ -15,9 +20,14 @@ export const themeColor = {
     dark: "#ffffff",
   },
   greyBlack: {
-    main: "#231F20",
-    light: "#231F20",
-    dark: "#231F20",
+    main: "#FABC13",
+    light: "#FABC13",
+    dark: "#FABC13",
+  },
+  yallowdark: {
+    main: "#FABC13",
+    light: "#FABC13",
+    dark: "#FABC13",
   },
   lightBlack: {
     main: "#9A9A9A",
@@ -31,6 +41,11 @@ export const themeColor = {
     dark: "#121F4D",
   },
   black: {
+    main: "#000000",
+    light: "#000000",
+    dark: "#000000",
+  },
+  blackwww: {
     main: "#000000",
     light: "#000000",
     dark: "#000000",
