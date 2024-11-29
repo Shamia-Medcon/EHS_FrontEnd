@@ -57,29 +57,29 @@ type GalleryType = {
 };
 
 function Gallery() {
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
   const [data, setData] = useState<GalleryType>();
 
-  const loadGallery = async () => {
-    setLoading(true);
-    try {
-      const res = await get(routeConfig.event.gallery, null);
-      if (res && res.status_code == 200) {
-        setData(res.data);
-      }
-      setLoading(false);
-    } catch (e) {
-      setLoading(false);
-    }
-  };
+  // const loadGallery = async () => {
+  //   setLoading(true);
+  //   try {
+  //     const res = await get(routeConfig.event.gallery, null);
+  //     if (res && res.status_code == 200) {
+  //       setData(res.data);
+  //     }
+  //     setLoading(false);
+  //   } catch (e) {
+  //     setLoading(false);
+  //   }
+  // };
 
   useEffect(() => {
-    loadGallery();
+    // loadGallery();
   }, []);
 
   return (
     <Grid mb={3} px={2} className="slide-container">
-      {loading ? (
+      {/* {loading ? (
         <Grid display={"flex"} justifyContent={"center"} alignItems={"center"}>
           <ClipLoader color={themeColor.primary.dark} size={40} />
         </Grid>
@@ -137,9 +137,63 @@ function Gallery() {
                 ))}
               </Slide>
             </>
-          ) : null}
-        </>
-      )}
+          ) : null} */}
+      {/* </> */}
+      {/* )} */}
+      <Grid
+        mb={10}
+        mt={10}
+        display={"flex"}
+        justifyContent={"center"}
+        // alignItems={"center"}
+        flexDirection={"column"}
+        width={1}
+      >
+        <Grid>
+          <Typography
+            variant="h4"
+            align="center"
+            fontWeight={"bold"}
+            color={themeColor.blue.dark}
+          >
+            {"RAK Diabetes Conference Gallery"}
+          </Typography>
+          {/* <Typography variant="subtitle2" color={themeColor.blue.dark}>
+                    A Glimpse Back: Explore the 2023 Conference Gallery
+                  </Typography> */}
+        </Grid>
+      
+       <Grid mt={5} container flexDirection={"row"} alignContent={"center"} justifyContent={"center"}>
+          <Box
+           m={2}
+
+          border={1}
+          borderRadius={5}
+            component="img"
+            src={"/static/images/ehs 2023 logo.png"}
+            sx={{
+              width: 350,
+              height: "100%",
+              objectFit: "cover", // Ensures the image fills the space
+              display: "block",
+            }}
+          />
+           <Box
+           m={2}
+            border={1}
+            borderRadius={5}
+            component="img"
+            src={"/static/images/ehs 2024 logo.png"}
+            sx={{
+              width: 350,
+              height: "100%",
+              objectFit: "cover", // Ensures the image fills the space
+              display: "block",
+            }}
+          />
+       
+       </Grid>
+      </Grid>
     </Grid>
   );
 }

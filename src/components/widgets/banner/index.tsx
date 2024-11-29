@@ -8,6 +8,7 @@ type PropType = {
   banner?: string;
 };
 function Banner({ children, banner }: PropType) {
+  console.log("banner",banner)
   return (
     <Grid sx={{ position: "relative" }}>
       {banner ? (
