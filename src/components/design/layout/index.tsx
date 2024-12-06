@@ -60,7 +60,7 @@ function Layout({ children, banner }: PropType) {
             ) : null}
             <CustomMenu />
           </Grid>
-          <Grid width={1} sx={{ mt: { md: 15, xs: 1 } }}>
+          <Grid width={1} sx={{ mt: { md: 1, xs: 1 } }}>
             {children}
           </Grid>
         </Grid>

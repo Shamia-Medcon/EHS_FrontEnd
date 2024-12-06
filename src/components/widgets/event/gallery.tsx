@@ -6,6 +6,7 @@ import React, { useEffect, useState } from "react";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import { ClipLoader } from "react-spinners";
+import Link from 'next/link';
 
 const divStyle = {
   display: "flex",
@@ -164,6 +165,7 @@ function Gallery() {
         </Grid>
       
        <Grid mt={5} container flexDirection={"row"} alignContent={"center"} justifyContent={"center"}>
+       <Link href="/gallery-2023/">
           <Box
            m={2}
 
@@ -173,11 +175,13 @@ function Gallery() {
             src={"/static/images/ehs 2023 logo.png"}
             sx={{
               width: 350,
-              height: "100%",
+              height: "80%",
               objectFit: "cover", // Ensures the image fills the space
               display: "block",
             }}
           />
+          </Link>
+          <Link href="/gallery-2024/">
            <Box
            m={2}
             border={1}
@@ -186,11 +190,12 @@ function Gallery() {
             src={"/static/images/ehs 2024 logo.png"}
             sx={{
               width: 350,
-              height: "100%",
+              height: "80%",
               objectFit: "cover", // Ensures the image fills the space
               display: "block",
             }}
           />
+          </Link>
        
        </Grid>
       </Grid>

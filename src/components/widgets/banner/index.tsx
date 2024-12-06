@@ -10,19 +10,80 @@ type PropType = {
 function Banner({ children, banner }: PropType) {
   console.log("banner",banner)
   return (
-    <Grid sx={{ position: "relative" }}>
+    <Grid sx={{ position: "relative", overflow: "hidden"}}>
       {banner ? (
         <>
           <Grid
-            sx={{
-              backgroundImage: `url(${banner})`,
-              backgroundSize: { md: "cover", xs: "cover" },
-              backgroundPosition: { md: "90% 0%", xs: "90% 0%" },
-              backgroundRepeat: "no-repeat",
-              width: "100%",
-              height: { md: 650, xs: 550 },
-            }}
-          ></Grid>
+          sx={{
+            position: "relative",
+            overflow: "hidden",
+            width: "100vw", 
+            height: "60vh", 
+            backgroundImage: `url(${banner})`,
+            backgroundSize: "cover", 
+            backgroundPosition: "center", 
+            backgroundRepeat: "no-repeat", 
+          }}
+            // sx={{
+            //   backgroundImage: `url(/static/images/banner-new.svg)`,
+            //   backgroundSize: {  md: "cover", xs: "contain" }, 
+            //   backgroundPosition: { md: "center", xs: "center" }, 
+            //   backgroundRepeat: "no-repeat",
+            //   width: "100%",
+            //   height: { md: 650, xs: 550 }, 
+            // }}
+    //         sx={{
+    //           position: "relative",
+    // width: "100vw",
+    // height: "60vh",
+    // minWidth: "100%",
+    // minHeight: "100%",
+    // overflow: "hidden",
+    //         }}
+          >
+            {/* <Box
+      component="img"
+      src="/static/images/banner-new.svg"
+      alt="Banner Background"
+      sx={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        objectFit: "cover", // Prevents cropping
+        zIndex: -1, // Pushes it to the background
+        objectPosition: "center center",
+        backgroundAttachment: "fixed"
+      }}
+    /> */}
+            {/* <Box
+              component="img"
+              src="/static/images/writeup.png" 
+              alt="Overlay Image"
+              sx={{
+                position: "absolute",
+                top: "18%", 
+                left: "50%",
+                transform: "translate(-50%, 0)", 
+                width: { md: "30%", xs: "50%" }, 
+                height: "auto", 
+              }}
+            />
+            <Box
+              component="img"
+              src="/static/images/360 logo.png"
+              alt="Overlay Image"
+              sx={{
+                position: "absolute",
+                top: "25%", 
+                left: "22%",
+                transform: "translate(-50%, 0)", 
+                width: { md: "18%", xs: "50%" }, 
+                height: "auto", 
+              }}
+            /> */}
+          </Grid>
           {/* <Box
             component={"img"}
             width={"100%"}
